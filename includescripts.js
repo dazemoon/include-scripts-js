@@ -74,6 +74,7 @@ function includeScripts(depFiles, onload, onerror) {
         }
         script.onload = (function (t) {
             return function () {
+
                 // perform chain of onload callbacks or recursively include further scripts
                 if (missingFiles.length === 1) {
                     if (!!onload) {
@@ -159,6 +160,7 @@ function includeScripts(depFiles, onload, onerror) {
             }
         }
         if (!found) {
+
             // store required file and its type - css files must be .css all others are assumed to be script files
             missingFiles.push({type: depFiles[i].substr(depFiles[i].length - 3) === 'css' ? 'style' : 'script', name: depFiles[i]});
         }
@@ -172,12 +174,12 @@ function includeScripts(depFiles, onload, onerror) {
             onload,
             onerror,
             missingFiles,
-            // this will cause recursion to apply the includeScripts on the next missing file
             function () {
+
+                // this will cause recursion to apply the includeScripts on the next missing file
                 includeScripts(depFiles.slice(1), onload, onerror);
             }
         );
-
     } else {
 
         // we're good to just go ahead and execute the payload

@@ -88,7 +88,7 @@ function includeScripts(depFiles, onload, onerror) {
                     t.deferredOnload();
                 }
             };
-        }(script, thisScript, parent));
+        }(thisScript));
 
         script.onerror = (function (t) {
             return function () {
@@ -102,7 +102,7 @@ function includeScripts(depFiles, onload, onerror) {
                     t.deferredOnerror(script.src);
                 }
             };
-        }(script, thisScript, parent));
+        }(thisScript));
 
         // load included node
         parent.appendChild(script);

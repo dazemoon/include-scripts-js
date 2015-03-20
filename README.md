@@ -12,7 +12,7 @@ JavaScript code to allow further inclusion of script or css file dependancies
         are each loaded once, one at a time, in order of dependency, and are visible to debuggers as if they were
         loaded statically.
         
-        USAGE:    includeScripts([<file>,<file>,..,<file>], function () {
+        USAGE:  includeScripts([<file>,<file>,..,<file>], function () {
                     // do stuff that depends on included files
                 },
                 function (filename) {

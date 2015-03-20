@@ -38,8 +38,6 @@
                 });
 
         NOTE:     external css files can also be included(this injects a link node into the dom)
-
-        jslint browser: true, regexp: true, vars: true
 */
 
 /*jslint browser: true, regexp: true, vars: true, plusplus: true*/

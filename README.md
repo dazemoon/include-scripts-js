@@ -19,4 +19,5 @@ JavaScript code to allow recursive script and css file inclusion
                     // do stuff to report that file <filename> wasn't loaded 
                 });
         
-        NOTE:     external css files can also be included (this injects a link node into the dom)
+        NOTE:     - external css files can also be included (this injects a link node into the dom)
+                  - Modifies the DOM and hits the server for EACH file included

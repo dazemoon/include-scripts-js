@@ -19,6 +19,8 @@ JavaScript code to allow further inclusion of script or css file dependancies
                     // do stuff to report that file <filename> wasn't loaded 
                 });
         
-        NOTE:     - css files can also be included (injects link nodes into the DOM)
-                  - any file that appears as script can be included (injects script nodes into the DOM)
+        NOTE:     - Assumes scripts are running on a browser (modifies the DOM)
+                  - CSS files can also be included (injects link nodes into the DOM)
+                  - Any file that appears as script can be included (injects script nodes into the DOM)
                   - Modifies the DOM and hits the server for EACH file included
+                  - Code executed in the 'do stuff' executes synchronously - after ALL the dependancies have loaded and executed

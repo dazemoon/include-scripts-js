@@ -19,5 +19,6 @@ JavaScript code to allow further inclusion of script or css file dependancies
                     // do stuff to report that file <filename> wasn't loaded 
                 });
         
-        NOTE:     - external css files can also be included (this injects a link node into the dom)
+        NOTE:     - css files can also be included (injects link nodes into the DOM)
+                  - any file that appears as script can be included (injects script nodes into the DOM)
                   - Modifies the DOM and hits the server for EACH file included

@@ -19,7 +19,7 @@ JavaScript code to allow further inclusion of script or css file dependancies
                     // do stuff that depends on included files
                 },
                 function (filename) {
-                    // do stuff to report that file <filename> wasn't loaded 
+                    // (optional) error handler - do stuff to report that file <filename> wasn't loaded 
                 });
                 
         CAVEATS:  - All files in the dependancy graph are loaded synchronously (in series) so browsers won't leverage

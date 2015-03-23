@@ -1,7 +1,7 @@
 # include-scripts-js
 JavaScript code to allow further inclusion of script or css file dependancies
 
- includeScripts() loads and executes scripts if they're not already loaded
+ includeScripts() recursively loads and executes required scripts where they're not already loaded
     
         A check is performed to see if the file is loaded as a script already
         if not a script node is created dangling off the same parent node as the currently executing script
@@ -12,6 +12,9 @@ JavaScript code to allow further inclusion of script or css file dependancies
         are each loaded once, one at a time, in order of dependency, and are visible to debuggers as if they were
         loaded statically.
         
+        Furthermore, any file included this way can itself use includeScripts to include further files (thus 
+        implementing the acyclic directed graph of file dependancies)
+        
         USAGE:  includeScripts([<file>,<file>,..,<file>], function () {
                     // do stuff that depends on included files
                 },
@@ -19,7 +22,7 @@ JavaScript code to allow further inclusion of script or css file dependancies
                     // do stuff to report that file <filename> wasn't loaded 
                 });
                 
-        CAVEATS:  - All files in the dependancy graph are loaded synchornously (in series) so browsers won't leverage
+        CAVEATS:  - All files in the dependancy graph are loaded synchronously (in series) so browsers won't leverage
                     multi-core concurrent loading.
                   - Each file in the dependancy graph makes a hit on its hosting server
                   

@@ -15,7 +15,7 @@ loaded statically.
 Furthermore, any file included this way can itself use includeScripts to include further files (thus 
 implementing the acyclic directed graph of file dependencies)
 
-USAGE:
+__USAGE:__
 ```javascript
         includeScripts([<file>,<file>,..,<file>], function () {
             // do stuff that depends on included files
@@ -25,11 +25,11 @@ USAGE:
         });
 ```
         
-CAVEATS:
+__CAVEATS:__
   * All files in the dependency graph are loaded synchronously (in series) so browsers won't leverage multi-core concurrent loading.
   * Each file in the dependency graph makes a hit on its hosting server
            
-NOTE:
+__NOTE:__
   * Code executed in the 'do stuff' is guaranteed to run AFTER all dependencies are loaded
   * Assumes scripts are running on a browser (modifies the DOM)
   * CSS files can also be included (injects link nodes into the DOM)

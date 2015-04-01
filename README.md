@@ -30,7 +30,7 @@ __CAVEATS:__
   * Each file in the dependency graph makes a hit on its hosting server
            
 __NOTE:__
-  * Code executed in the 'do stuff' is guaranteed to run AFTER all dependencies are loaded
+  * Code executed in the 'do stuff' is guaranteed to run _after_ all dependencies are loaded
   * Assumes scripts are running on a browser (modifies the DOM)
   * CSS files can also be included (injects link nodes into the DOM)
   * Any file that appears as script can be included (injects script nodes into the DOM)

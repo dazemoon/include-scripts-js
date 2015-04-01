@@ -1,6 +1,6 @@
 # include-scripts-js
-JavaScript code to allow further inclusion of script or css file dependancies
-=============================================================================    
+## JavaScript code to allow further inclusion of script or css file dependancies
+
 `includeScripts()` recursively loads and executes required scripts where they're not already loaded
 
 A check is performed to see if the file is loaded as a script already

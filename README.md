@@ -27,7 +27,7 @@ __USAGE:__
         
 __CAVEATS:__
   * All files in the dependency graph are loaded synchronously (in series) so browsers won't leverage multi-core concurrent loading.
-  * Each file in the dependency graph makes a hit on its hosting server
+  * _Each_ file in the dependency graph is loaded seperately hitting its hosting server
            
 __NOTE:__
   * Code executed in the 'do stuff' is guaranteed to run _after_ all dependencies are loaded

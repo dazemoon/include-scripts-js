@@ -15,19 +15,22 @@ loaded statically.
 Furthermore, any file included this way can itself use includeScripts to include further files (thus 
 implementing the acyclic directed graph of file dependencies)
 
-USAGE:  ```javascript
-includeScripts([<file>,<file>,..,<file>], function () {
+USAGE:
+```javascript
+        includeScripts([<file>,<file>,..,<file>], function () {
             // do stuff that depends on included files
         },
         function (filename) {
             // (optional) error handler - do stuff to report that file <filename> wasn't loaded
-        });```
+        });
+```
         
-CAVEATS:  * All files in the dependency graph are loaded synchronously (in series) so browsers won't leverage
-            multi-core concurrent loading.
-          * Each file in the dependency graph makes a hit on its hosting server
+CAVEATS:
+  * All files in the dependency graph are loaded synchronously (in series) so browsers won't leverage multi-core concurrent loading.
+  * Each file in the dependency graph makes a hit on its hosting server
            
-NOTE:     * Code executed in the 'do stuff' is guaranteed to run AFTER all dependencies are loaded
-          * Assumes scripts are running on a browser (modifies the DOM)
-          * CSS files can also be included (injects link nodes into the DOM)
-          * Any file that appears as script can be included (injects script nodes into the DOM)
+NOTE:
+  * Code executed in the 'do stuff' is guaranteed to run AFTER all dependencies are loaded
+  * Assumes scripts are running on a browser (modifies the DOM)
+  * CSS files can also be included (injects link nodes into the DOM)
+  * Any file that appears as script can be included (injects script nodes into the DOM)

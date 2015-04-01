@@ -13,7 +13,7 @@ JavaScript code to allow further inclusion of script or css file dependancies
         loaded statically.
         
         Furthermore, any file included this way can itself use includeScripts to include further files (thus 
-        implementing the acyclic directed graph of file dependancies)
+        implementing the acyclic directed graph of file dependencies)
         
         USAGE:  includeScripts([<file>,<file>,..,<file>], function () {
                     // do stuff that depends on included files
@@ -22,11 +22,11 @@ JavaScript code to allow further inclusion of script or css file dependancies
                     // (optional) error handler - do stuff to report that file <filename> wasn't loaded 
                 });
                 
-        CAVEATS:  - All files in the dependancy graph are loaded synchronously (in series) so browsers won't leverage
+        CAVEATS:  - All files in the dependency graph are loaded synchronously (in series) so browsers won't leverage
                     multi-core concurrent loading.
-                  - Each file in the dependancy graph makes a hit on its hosting server
+                  - Each file in the dependency graph makes a hit on its hosting server
                   
-        NOTE:     - Code executed in the 'do stuff' is guaranteed to run AFTER all dependancies are loaded
+        NOTE:     - Code executed in the 'do stuff' is guaranteed to run AFTER all dependencies are loaded
                   - Assumes scripts are running on a browser (modifies the DOM)
                   - CSS files can also be included (injects link nodes into the DOM)
                   - Any file that appears as script can be included (injects script nodes into the DOM)
